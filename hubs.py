@@ -1,0 +1,1 @@
+hubsList = ['The Portal to Texas History', 'Sunshine State Digital Network', 'Texas Digital Library', 'Minnesota Digital Library', 'OKHub', 'Plains to Peaks Collective', 'Digital Library of Georgia', 'Northwest Digital Heritage', 'Orbis Cascade Alliance']

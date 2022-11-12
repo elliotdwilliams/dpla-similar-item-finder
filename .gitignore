@@ -1,0 +1,16 @@
+.DS_Store
+credentials.py
+
+__pycache__/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Environments
+.env
+.venv
+env/
+venv/
+
+app/.DS_Store
+app/__pycache__/
