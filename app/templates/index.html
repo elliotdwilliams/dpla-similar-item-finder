@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>DPLA Similar Item Finder</h1>
+    <form action="" method="get">
+      <input type="text" name="dplaId" placeholder="DPLA ID" style="width: 300px;">
+      <select name="hub">
+        <option value="{{hubsList[0]}}">Select a hub:</option>
+        {% for hub in hubsList %}
+        <option value= "{{hub}}">{{hub}}</option>
+        {% endfor %}
+      </select>
+      <input type="submit" value="Get record">
+    </form>
+    <br>
+    <div>
+      {% if result1 %}
+        Searching for '{{ subject }}' from {{hub}}...<br><br>
+        Results found: {{ result1.count }}<br>
+        <a href="https://dp.la/search?q={{subject}}&partner={{hub}}" target="_blank" rel="noopener noreferrer">
+          View all results in DPLA</a>
+        <br><br>
+        {% if result1.count == 0 %}
+          Sorry, no items found!  Try again.<br>
+          (Hit refresh to try another subject from this item, or enter a different item ID or hub above.)
+        {% else %}
+          <b>**Similar Items**</b><br>
+          {% for x in resultDisplay %}
+            <b><i>Title:</i></b> {{x["sourceResource"]["title"][0]}}<br>
+            <b><i>Data Provider:</i></b> {{x["dataProvider"]["name"]}}<br>
+            <b><i>View in DPLA:</i></b> <a href="https://dp.la/item/{{x["id"]}}" target="_blank" rel="noopener noreferrer">
+              https://dp.la/item/{{x["id"]}}</a><br>
+            <b><i>Subjects:</i></b>
+            {% for y in x["sourceResource"]["subject"] %}
+              {{y["name"]}};
+            {% endfor %}<br>
+            <img src="{{x["object"]}}" alt="{{x["sourceResource"]["title"][0]}}" style="height:200px; margin-left: 20px">
+            <br><br>
+          {% endfor %}
+        {% endif %}
+      {% else %}
+        <br>
+      {% endif %}
+    </div>
+{% endblock %}
