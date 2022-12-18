@@ -5,6 +5,7 @@
     <div>
       <p>The DPLA Similar Item Finder is an experiment in browsing and serendipitous discovery in the <a href="https://dp.la/">Digital Public Library of America</a>.  In other words, it’s a way to find interesting stuff in DPLA and explore connections between items from different places.</p>
       <p>The website asks you for a DPLA identifier and a DPLA contributing hub. The Similar Item Finder looks for items from the selected hub that might have something in common with the item you gave it.  It does this by randomly selecting one subject heading from your original item, and then searching the selected hub for that subject heading.  It randomly selects 4 items from those search results to show you, and offers you a link to view the complete results set in DPLA.</p>
+      <p>The list of hubs is somewhat arbitrarily chosen.  You can use a different hub by editing the URL to include that hub's name as you would search for it in DPLA.</p>
       <p>A few tips for using the Similar Item Finder:
         <ul>
           <li>The ID for an item in DPLA can be found in the item's URL. It's the part after 'https://dp.la/item/'.</li>
@@ -14,7 +15,7 @@
           <li>You have better chances of getting results if the record you provide has relatively simple subject headings, as opposed to long complex subject strings.</li>
         </ul>
       </p>
-      <p>The DPLA Similar Item Finder was written in python and flask, and uses the <a href="https://pro.dp.la/developers/api-codex">DPLA API</a> for interacting with the DPLA dataset.  You can find the underlying code in github: <a href="https://github.com/elliotdwilliams/dpla-similar-item-finder">https://github.com/elliotdwilliams/dpla-similar-item-finder</a>  This website is hosted on Heroku.</p>
+      <p>The DPLA Similar Item Finder was written in python and flask, and uses the <a href="https://pro.dp.la/developers/api-codex">DPLA API</a> for interacting with the DPLA dataset.  You can find the underlying code in github: <a href="https://github.com/elliotdwilliams/dpla-similar-item-finder">https://github.com/elliotdwilliams/dpla-similar-item-finder</a>  This website is hosted on <a href="https://www.pythonanywhere.com/">PythonAnywhere</a>.</p>
       <p>This project was created by Elliot Williams in 2022.  It is not affiliated with DPLA, any contributing partner institution or hub, or anyone else.  Questions or feedback, email <a href="mailto:elliotdwilliams@gmail.com">elliotdwilliams@gmail.com</a>, or find me <a href="https://twitter.com/elliot_dw">on twitter</a>.</p>
     </div>
 {% endblock %}
