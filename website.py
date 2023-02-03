@@ -11,16 +11,16 @@ app = Flask(__name__)
 @app.route('/')
 @app.route('/index')
 def index():
-    #Get dplaId variable from the URL; blank if not found
+    # Get dplaId variable from the URL; blank if not found
     dplaId = request.args.get("dplaId", "")
     hub = request.args.get("hub", "")
-    #if dplaId variable has a value, run the getItem script and create the title variable
+    # If dplaId variable has a value, run the findItem script and create the variables for templates
     if dplaId:
         findItem(dplaId, hub)
         result1 = findItem.result1
         subject = findItem.randomSubject
         resultDisplay = findItem.resultDisplay
-    #if no dplaId value, set variables to blank
+    # If no dplaId value, set variables to blank
     else:
         result1 = ""
         subject = ""
